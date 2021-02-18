@@ -6,7 +6,7 @@ pipeline {
                 checkout([$class: 'GitSCM', branches: [[name: 'main']], doGenerateSubmoduleConfigurations: false, extensions: [], submoduleCfg: [], userRemoteConfigs: [[credentialsId: 'tina24', url: 'https://github.com/tinacharde24/tina_charde.git']]])
             }
         }
-        stage('Checkout') {
+        stage('Build') {
             steps { 
          git branch: 'main', credentialsId: 'tina24', url: 'https://github.com/tinacharde24/tina_charde.git'
          sh 'python add_num_tina.txt'
