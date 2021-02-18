@@ -3,12 +3,12 @@ pipeline {
     stages {
         stage('Checkout') {
             steps {
-                checkout([$class: 'GitSCM', branches: [[name: 'main']], doGenerateSubmoduleConfigurations: false, extensions: [], submoduleCfg: [], userRemoteConfigs: [[credentialsId: 'tina24', url: 'https://github.com/tinacharde24/tina_charde.git']]])
+                checkout([$class: 'GitSCM', branches: [[name: 'main_1']], doGenerateSubmoduleConfigurations: false, extensions: [], submoduleCfg: [], userRemoteConfigs: [[credentialsId: 'tina24', url: 'https://github.com/tinacharde24/tina_charde.git']]])
             }
         }
         stage('Checkout') {
             steps { 
-         git branch: 'main', credentialsId: 'tina24', url: 'https://github.com/tinacharde24/tina_charde.git'
+         git branch: 'main_1', credentialsId: 'tina24', url: 'https://github.com/tinacharde24/tina_charde.git'
          sh 'python add_num_tina.txt'
                 
             }
